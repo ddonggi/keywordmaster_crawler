@@ -117,9 +117,10 @@ for row_index, row in enumerate(ws.iter_rows(min_row=last_row, max_col=1, values
     search_query = row[0]  # A 컬럼에 있는 단어 (=검색어)
     random_sec = random.uniform(2, 5)
     print("-------------------------------------")
-    print(f"랜덤 대기 시간: {random_sec} 초")
+    print(f"랜덤 대기 시간: {round(random_sec,2)} 초")
     time.sleep(random_sec)
     print("-------------------------------------")
+    print(f'({round(row_index/count*100,2)}%/100) ({row_index}/{count}) ')
     print('검색어 : "' + search_query + '"')
     # 단어를 검색하고 결과를 가져오는 로직
     # 요청 URL
